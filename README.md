@@ -2,4 +2,4 @@
 
 ## Programs
 
-* [cortex-client](./cortex-client)
+* [cortex-client](./cortex)

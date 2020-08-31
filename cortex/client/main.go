@@ -122,7 +122,7 @@ func parseResponse(res *Response, d []byte) error {
 		return fmt.Errorf(res.Error)
 	}
 
-	log.Printf("Success response receieved from Cortex. Response %+v", res.Data)
+	log.Printf("Response receieved from Cortex successfully\n%+v", res.Data)
 
 	return nil
 }
