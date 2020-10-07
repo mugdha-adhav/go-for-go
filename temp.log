@@ -1,6 +1,0 @@
-{"level":"debug","ts":1602054224.1231518,"caller":"cmd/main.go:45","msg":"Testing debug message"}
-{"level":"info","ts":1602054224.1231992,"caller":"cmd/main.go:49","msg":"Testing info message"}
-{"level":"info","ts":1602054224.1232138,"caller":"cmd/main.go:53","msg":"Testing sugared message: Here is some sample content"}
-{"level":"error","ts":1602054224.1232398,"caller":"cmd/main.go:57","msg":"Testing error message"}
-{"level":"fatal","ts":1602054224.123249,"caller":"cmd/main.go:69","msg":"Testing fatal message"}
-}

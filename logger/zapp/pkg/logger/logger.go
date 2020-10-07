@@ -26,18 +26,22 @@ func New() error {
 
 	// Create custom zap config
 	core := zapcore.NewTee(
-		zapcore.NewCore(zapcore.NewConsoleEncoder(setUserConfigs()), consoleDebugging, zap.InfoLevel),
+		zapcore.NewCore(zapcore.NewConsoleEncoder(setCustomConfig()), consoleDebugging, zap.InfoLevel),
 		zapcore.NewCore(zapcore.NewJSONEncoder(zap.NewProductionEncoderConfig()), fileDebugging, zap.DebugLevel),
 	)
 
-	Log = zap.New(core, zap.AddCaller(), zap.AddCallerSkip(1)).Sugar()
+	Log = zap.New(core, zap.AddCaller()).Sugar()
 
 	defer Log.Sync()
 	return nil
 }
 
-func setUserConfigs() zapcore.EncoderConfig {
+func setCustomConfig() zapcore.EncoderConfig {
 	return zapcore.EncoderConfig{
-		MessageKey: "message",
+		LevelKey:    "level",
+		TimeKey:     "ts",
+		MessageKey:  "msg",
+		EncodeLevel: zapcore.CapitalLevelEncoder,
+		EncodeTime:  zapcore.EpochTimeEncoder,
 	}
 }
