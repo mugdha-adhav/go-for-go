@@ -32,7 +32,7 @@ func printFatalLog() error {
 }
 
 func printSugaredLog() error {
-	log.Infof("Testing sugared message: %s", "Here is some sample content")
+	log.Infof("Testing sugared message: %s. And then another content: %s", "Hey", "Hello")
 	return nil
 }
 
