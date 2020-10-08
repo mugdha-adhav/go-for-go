@@ -3,41 +3,41 @@ package main
 import (
 	"fmt"
 
-	"mugdha-adhav/go-for-go/logger/zapp/pkg/logger"
+	"mugdha-adhav/go-for-go/logger/zapp/pkg/log"
 )
 
 func printDebugLog() error {
-	logger.Log.Debug("Testing debug message")
+	log.Debug("Testing debug message")
 	return nil
 }
 
 func printInfoLog() error {
-	logger.Log.Info("Testing info message")
+	log.Info("Testing info message")
 	return nil
 }
 
 func printErrorLog() error {
-	logger.Log.Error("Testing error message")
+	log.Error("Testing error message")
 	return nil
 }
 
 func printPanicLog() error {
-	logger.Log.Panic("Testing panic message")
+	log.Panic("Testing panic message")
 	return nil
 }
 
 func printFatalLog() error {
-	logger.Log.Fatal("Testing fatal message")
+	log.Fatal("Testing fatal message")
 	return nil
 }
 
 func printSugaredLog() error {
-	logger.Log.Infof("Testing sugared message: %s", "Here is some sample content")
+	log.Infof("Testing sugared message: %s", "Here is some sample content")
 	return nil
 }
 
 func main() {
-	if err := logger.New(); err != nil {
+	if err := log.New(); err != nil {
 		fmt.Printf("Logger initialization failed with error: %s", err.Error())
 	}
 

@@ -1,4 +1,4 @@
-package logger
+package log
 
 import (
 	"os"
@@ -11,7 +11,7 @@ const (
 	logFile = "temp.log"
 )
 
-var Log *zap.SugaredLogger
+var s *zap.SugaredLogger
 
 func New() error {
 	// If the file doesn't exist, create it, or append to the file
@@ -30,9 +30,9 @@ func New() error {
 		zapcore.NewCore(zapcore.NewJSONEncoder(zap.NewProductionEncoderConfig()), fileDebugging, zap.DebugLevel),
 	)
 
-	Log = zap.New(core, zap.AddCaller()).Sugar()
+	s = zap.New(core, zap.AddCaller()).Sugar()
 
-	defer Log.Sync()
+	defer s.Sync()
 	return nil
 }
 
