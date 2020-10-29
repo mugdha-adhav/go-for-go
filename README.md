@@ -1,6 +1,7 @@
 # go-for-go
 
-## Programs
+## Basic Programs
 
-* [cortex-client](./cortex)
 * [zap-based-loggging](./logger/zapp)
+* [unit-tests](./tests)
+* [cortex-client](./cortex)
